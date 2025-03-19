@@ -15,14 +15,15 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ApplicationException.class)
     public ResponseEntity<ApiResponse<Void>> handleApplicationException(ApplicationException ex) {
+
         String code = ex.getErrorCode().getCode();
         String message = ex.getErrorCode().getMessage();
 
         log.error("애플리케이션 예외 발생: [{}] {}", code, message);
+      
         ApiResponse<Void> response = ApiResponse.fail(message);
         return ResponseEntity.badRequest().body(response);
     }
-
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleGenericException(Exception ex) {
