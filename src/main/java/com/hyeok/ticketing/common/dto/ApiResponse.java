@@ -1,9 +1,6 @@
 package com.hyeok.ticketing.common.dto;
 
 
-import com.hyeok.ticketing.common.enums.ErrorCode;
-import com.hyeok.ticketing.common.enums.ResponseMessageCode;
-import com.hyeok.ticketing.common.util.MessageUtil;
 import lombok.Getter;
 
 @Getter
